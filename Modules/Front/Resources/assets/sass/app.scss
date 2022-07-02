@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'init/reset';
+@import 'init/modern';
+
+@import 'components/slider';
+@import 'components/component';
+@import 'components/menu';
+
+body {
+    color: #333;
+    //background-color: #f5fff8;
+    //background-color: #d2f9de;
+}
