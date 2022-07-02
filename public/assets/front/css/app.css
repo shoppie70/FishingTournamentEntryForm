@@ -823,6 +823,12 @@ select {
 .w-10\/12 {
   width: 83.333333%;
 }
+.w-3\/12 {
+  width: 25%;
+}
+.w-9\/12 {
+  width: 75%;
+}
 .min-w-0 {
   min-width: 0px;
 }
