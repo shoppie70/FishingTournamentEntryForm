@@ -16,12 +16,12 @@ class FishTableSeeder extends Seeder
             '真鯛',
             '黒鯛',
             '青物',
-            'アコウ'
+            'アコウ',
         ];
 
         foreach ($array as $name) {
             Fish::create([
-                'name' => $name
+                'name' => $name,
             ]);
         }
     }

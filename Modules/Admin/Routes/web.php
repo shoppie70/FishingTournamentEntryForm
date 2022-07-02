@@ -14,13 +14,8 @@
 use Illuminate\Support\Facades\Route;
 use Modules\Admin\Http\Controllers\AdminController;
 use Modules\Admin\Http\Controllers\Auth\AuthenticatedSessionController;
-use Modules\Admin\Http\Controllers\DepartmentController;
-use Modules\Admin\Http\Controllers\InvoiceController;
-use Modules\Admin\Http\Controllers\MenuController;
 use Modules\Admin\Http\Controllers\ReservationController;
-use Modules\Admin\Http\Controllers\ReservationPlaceController;
 use Modules\Admin\Http\Controllers\SystemController;
-use Modules\Admin\Http\Controllers\UserController;
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], static function (): void {
     Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('login');
@@ -43,6 +38,5 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], static function (): void {
             Route::get('/artisan', [SystemController::class, 'artisan'])->name('artisan');
             Route::post('/artisan/run', [SystemController::class, 'run'])->name('artisan.run');
         });
-
     });
 });

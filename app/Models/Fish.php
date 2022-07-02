@@ -11,6 +11,6 @@ class Fish extends Model
 
     protected $fillable = [
         'name',
-        'image'
+        'image',
     ];
 }

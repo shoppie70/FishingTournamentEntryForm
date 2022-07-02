@@ -6,7 +6,7 @@ use App\Models\Entry;
 
 class SaveEntryAction
 {
-    public function __invoke( array $request)
+    public function __invoke(array $request)
     {
         return Entry::create([
             'tournament_id' => $request['tournament_id'],

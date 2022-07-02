@@ -34,10 +34,10 @@ class ResetPasswordNotification extends Notification
     public function toMail(mixed $notifiable): MailMessage
     {
 //        $url = urldecode(url('reset-password', $this->token . '?email=' . $notifiable->email));
-        $url = route('user.password.reset', ['token' => $this->token . '?email=' . $notifiable->email]);
+        $url = route('user.password.reset', ['token' => $this->token.'?email='.$notifiable->email]);
 
         return (new MailMessage())
-            ->subject('【' . config('app.name') . '】パスワード再設定')
+            ->subject('【'.config('app.name').'】パスワード再設定')
             ->markdown('front::email.password_reset', ['reset_url' => $url]);
     }
 

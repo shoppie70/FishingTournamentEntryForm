@@ -14,7 +14,7 @@ class Tournament extends Model
         'image_path',
         'date',
         'capacity',
-        'last_entry_number'
+        'last_entry_number',
     ];
 
     protected $casts = [
@@ -22,6 +22,6 @@ class Tournament extends Model
         'image_path' => 'string',
         'date' => 'date',
         'capacity' => 'integer',
-        'last_entry_number' => 'integer'
+        'last_entry_number' => 'integer',
     ];
 }

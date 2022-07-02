@@ -34,7 +34,7 @@ class TournamentFishTableSeeder extends Seeder
         foreach ($array as $data) {
             TournamentFish::create([
                 'tournament_id' => $data['tournament_id'],
-                'fish_id' => $data['fish_id']
+                'fish_id' => $data['fish_id'],
             ]);
         }
     }

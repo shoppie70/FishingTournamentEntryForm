@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class RedirectIfAuthenticated
 {
     private const GUARD_USER = 'users';
+
     private const GUARD_ADMIN = 'admins';
 
     public function handle(Request $request, Closure $next, ...$guards)

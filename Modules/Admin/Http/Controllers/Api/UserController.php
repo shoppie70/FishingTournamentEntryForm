@@ -85,7 +85,7 @@ class UserController extends Controller
                     ];
 
                     if (User::where('staff_number', $param['staff_number'])->exists()) {
-                        throw new RuntimeException('職員番号：' . $param['staff_number'] . 'の方は既にシステムに登録されています。');
+                        throw new RuntimeException('職員番号：'.$param['staff_number'].'の方は既にシステムに登録されています。');
                     }
 
                     User::create([

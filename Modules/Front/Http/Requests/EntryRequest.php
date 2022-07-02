@@ -4,7 +4,7 @@ namespace Modules\Front\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class EntryRequest  extends FormRequest
+class EntryRequest extends FormRequest
 {
     public function rules(): array
     {

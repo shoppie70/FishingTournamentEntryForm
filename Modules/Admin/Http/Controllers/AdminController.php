@@ -9,6 +9,7 @@ use Modules\Admin\Enums\AdminType;
 class AdminController extends Controller
 {
     protected string $base_title = '管理者';
+
     protected array $roles = [];
 
     public function __construct()
@@ -22,7 +23,7 @@ class AdminController extends Controller
 
     public function index()
     {
-        $title = $this->base_title . '一覧';
+        $title = $this->base_title.'一覧';
         $base_title = $this->base_title;
         $admin_accounts = Admin::all();
 
@@ -38,7 +39,7 @@ class AdminController extends Controller
 
     public function create()
     {
-        $title = $this->base_title . '作成';
+        $title = $this->base_title.'作成';
         $endpoint = route('api.admin.v1.accounts.create');
         $method = 'POST';
         $roles = $this->roles;
@@ -53,7 +54,7 @@ class AdminController extends Controller
 
     public function edit(Admin $admin)
     {
-        $title = $this->base_title . '編集';
+        $title = $this->base_title.'編集';
         $endpoint = route('api.admin.v1.accounts.edit', ['admin' => $admin]);
         $method = 'POST';
         $roles = $this->roles;

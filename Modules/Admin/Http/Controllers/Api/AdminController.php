@@ -33,14 +33,14 @@ class AdminController extends Controller
             return response()->json([
                 'status' => 'error',
                 'code' => '401',
-                'message' => $exception->getMessage() ?: $this->base_title . 'を作成できませんでした。',
+                'message' => $exception->getMessage() ?: $this->base_title.'を作成できませんでした。',
             ]);
         }
 
         return response()->json([
             'status' => 'success',
             'code' => '200',
-            'message' => $this->base_title . 'を正常に作成しました。',
+            'message' => $this->base_title.'を正常に作成しました。',
         ]);
     }
 
@@ -64,14 +64,14 @@ class AdminController extends Controller
             return response()->json([
                 'status' => 'error',
                 'code' => '401',
-                'message' => $exception->getMessage() ?: $this->base_title . 'を更新できませんでした。',
+                'message' => $exception->getMessage() ?: $this->base_title.'を更新できませんでした。',
             ]);
         }
 
         return response()->json([
             'status' => 'success',
             'code' => '200',
-            'message' => $this->base_title . 'を正常に更新しました。',
+            'message' => $this->base_title.'を正常に更新しました。',
             'data' => $admin,
         ]);
     }

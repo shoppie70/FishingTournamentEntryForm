@@ -11,7 +11,7 @@ class TournamentFish extends Model
 
     protected $fillable = [
         'tournament_id',
-        'fish_id'
+        'fish_id',
     ];
 
     protected $casts = [

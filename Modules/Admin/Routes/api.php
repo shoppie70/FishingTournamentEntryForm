@@ -2,11 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use Modules\Admin\Http\Controllers\Api\AdminController;
-use Modules\Admin\Http\Controllers\Api\DepartmentController;
-use Modules\Admin\Http\Controllers\Api\InvoiceController;
-use Modules\Admin\Http\Controllers\Api\MenuController;
-use Modules\Admin\Http\Controllers\Api\ReservationController;
-use Modules\Admin\Http\Controllers\Api\ReservationPlaceController;
 use Modules\Admin\Http\Controllers\Api\UserController;
 
 /*

@@ -24,7 +24,7 @@ class CalendarRequest extends FormRequest
     public function rules()
     {
         return [
-            'year' => 'nullable|digits:4|integer|max:'.(date('Y')+1),
+            'year' => 'nullable|digits:4|integer|max:'.(date('Y') + 1),
             'month' => 'nullable|integer|min:1|max:12|',
         ];
     }

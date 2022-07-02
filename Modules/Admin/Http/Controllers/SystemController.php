@@ -2,13 +2,13 @@
 
 namespace Modules\Admin\Http\Controllers;
 
+use function array_key_exists;
 use Error;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Validation\Rule;
-use function array_key_exists;
 
 class SystemController extends Controller
 {
@@ -153,7 +153,7 @@ class SystemController extends Controller
             ]);
         }
 
-        if (!$isCommandSuccess) {
+        if (! $isCommandSuccess) {
             return redirect()->back()->withErrors([
                 'command' => $this->commands[$command]['messages']['failed'],
             ]);

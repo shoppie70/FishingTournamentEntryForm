@@ -51,12 +51,12 @@ class FrontController
             [
                 'title' => 'ルール',
                 'detail' => '1人2魚種までエントリー可能。
-                当日のポイント選びはくじ引きで決定します。'
+                当日のポイント選びはくじ引きで決定します。',
             ],
             [
                 'title' => '協賛',
                 'detail' => 'たい公望/おむや/釣具のポイント/個人スポンサー：匿名様',
-            ]
+            ],
         ];
 
         return view('front::index', compact(
