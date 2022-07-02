@@ -39,6 +39,15 @@
             }
         }
 
+        const checkbox_init = () => {
+            const checkboxes = document.getElementsByClassName('entry-checkbox');
+
+
+            for (let i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].checked = false;
+            }
+        }
+
         // FIXME ;-(
         @foreach($fishing_styles as $fishing_style)
         /* ------- */
@@ -50,6 +59,8 @@
         });
         /* ------- */
         @endforeach
+
+        checkbox_init();
     </script>
 @endsection
 
@@ -59,9 +70,23 @@
             <h2 class="my-4 font-bold">
                 {{ $title }}
             </h2>
+            @if(!$is_reservable)
+                <div class="rounded-3xl bg-red-400 p-4 w-full mb-16">
+                    <h2 class="mb-2 text-white font-bold text-lg">
+                        受付終了のお知らせ
+                    </h2>
+                    <p class="text-white mb-4">
+                        {{ $tournament->name }}の応募ページをご覧頂きありがとうございます。<br>
+                        ただいま、大会へのご応募が定員の30人に達した為、<br>
+                        受付を終了させていただいております。<br>
+                        よろしければ、次回のご参加をお待ちしております。
+                    </p>
+                </div>
+            @endif
             @include('front::components.form.error')
             <form name="entry_form" action="{{ $endpoint }}" method="{{ $method }}">
                 @csrf
+                <input type="hidden" name="tournament_id" value="1">
                 <div class="mb-4">
                     <label class="block font-medium text-sm text-gray-700 mb-2" for="">
                         参加魚種 ※ 2つまで応募可能です！
@@ -89,12 +114,14 @@
                         'title' => 'お名前',
                         'name' => 'name',
                         'placeholder' => '',
+                        'required' => true,
                     ])
                 </div>
                 <div class="mb-4">
                     @include('front::components.form.input-tel', [
                         'title' => '電話番号',
                         'name' => 'tel',
+                        'required' => true,
                     ])
                 </div>
                 <div class="mb-4">
@@ -102,6 +129,7 @@
                         'title' => 'メールアドレス',
                         'name' => 'email',
                         'placeholder' => '',
+                        'required' => true,
                     ])
                 </div>
                 <div class="mb-4">
@@ -138,7 +166,7 @@
                             ※ 上記以外の目的で個人情報を使うことはございません。
                         </p>
                     </div>
-                    <button type="submit" onclick="checkFishingStyleChecked()"
+                    <button type="{{ $is_reservable ? 'submit' : 'button' }}" onclick="checkFishingStyleChecked()"
                             class="w-8/12 block cursor-pointer mx-auto rounded-3xl py-2 px-4 bg-cyan-600 font-bold text-white">
                         応募する
                     </button>

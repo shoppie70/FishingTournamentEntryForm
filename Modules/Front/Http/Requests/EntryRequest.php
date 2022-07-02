@@ -9,6 +9,7 @@ class EntryRequest  extends FormRequest
     public function rules(): array
     {
         return [
+            'tournament_id' => 'required|integer',
             'fishing_style' => 'required|array|exists:fish,id',
             'name' => 'required|string',
             'tel' => 'required|string|',

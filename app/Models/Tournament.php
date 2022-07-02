@@ -5,20 +5,23 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Invoice extends Model
+class Tournament extends Model
 {
     use HasFactory;
 
     protected $fillable = [
+        'name',
+        'image_path',
         'date',
-        'serves',
-        'billing_amount',
+        'capacity',
+        'last_entry_number'
     ];
 
     protected $casts = [
+        'name' => 'string',
+        'image_path' => 'string',
         'date' => 'date',
-        'serves' => 'integer',
-        'billing_amount' => 'integer',
-        'created_at' => 'datetime',
+        'capacity' => 'integer',
+        'last_entry_number' => 'integer'
     ];
 }
