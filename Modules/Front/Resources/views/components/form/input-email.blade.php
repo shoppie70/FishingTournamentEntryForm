@@ -1,4 +1,4 @@
-<label class="block font-medium text-sm text-gray-700" for="{{ $id ?? '' }}">
+<label class="block font-bold text-sm text-gray-700" for="{{ $id ?? '' }}">
     {{ $title }}
 </label>
 <input

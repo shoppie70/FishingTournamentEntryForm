@@ -10,9 +10,9 @@
 
     </head>
     <body class="bg-cyan-100 min-h-screen w-full mx-auto" style="max-width: 540px">
-        <header class="pt-4">
-            @include('front::partials.header')
-        </header>
+{{--        <header class="pt-4 mb-4">--}}
+{{--            @include('front::partials.header')--}}
+{{--        </header>--}}
         <main class="">
             @yield('content')
         </main>

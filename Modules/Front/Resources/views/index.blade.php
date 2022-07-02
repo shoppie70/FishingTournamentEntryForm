@@ -65,9 +65,31 @@
 @endsection
 
 @section('content')
-    <section class="h-screen">
-        <div class="rounded-3xl bg-white pt-4 pb-16 px-4">
-            <h2 class="my-4 font-bold">
+    <section class="">
+        <figure class="relative bg-white">
+            <img style="filter:opacity(0.5);" src="{{ asset('assets/front/images/shugo.jpg') }}" alt="集合写真">
+            <figcaption class="mt-2 absolute w-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                <img src="{{ asset('assets/front/images/title_bl.png') }}" alt="前田杯 秋の磯釣り大会"
+                     class="max-w-screen object-contain logo mx-auto px-8">
+            </figcaption>
+        </figure>
+        <div class="bg-white rounded-b-3xl pb-8 pt-2 px-4 mb-16">
+            <p class="mb-4">
+                岡山県は下津井の沖磯で行われる釣り大会です。お好きな魚種を2つまで選んで頂き、ページ下部のフォームよりエントリーしてください。
+            </p>
+            @foreach($tournament_details as $tournament_detail)
+                <dl class="border-b py-2 flex">
+                    <dt class="w-2/12 font-bold">
+                        {{ $tournament_detail['title'] }}
+                    </dt>
+                    <dd class="w-10/12">
+                        {!! nl2br($tournament_detail['detail']) !!}
+                    </dd>
+                </dl>
+            @endforeach
+        </div>
+        <div class="rounded-t-3xl bg-white pt-4 pb-16 px-4">
+            <h2 class="text-xl my-4 font-bold">
                 {{ $title }}
             </h2>
             @if(!$is_reservable)
@@ -89,7 +111,7 @@
                 <input type="hidden" name="tournament_id" value="1">
                 <div class="mb-4">
                     <label class="block font-medium text-sm text-gray-700 mb-2" for="">
-                        参加魚種 ※ 2つまで応募可能です！
+                        <span class="font-bold">参加魚種</span> ※2つまで選択可能です！
                     </label>
                     <ul class="flex flex-wrap">
                         @foreach($fishing_styles as $i => $fishing_style)
@@ -133,7 +155,7 @@
                     ])
                 </div>
                 <div class="mb-4">
-                    <label class="block font-medium text-sm text-gray-700" for="fellowship">
+                    <label class="block font-bold text-sm text-gray-700" for="fellowship">
                         大会終了後の親睦会への参加
                     </label>
                     <select name="fellowship" id="fellowship"

@@ -24,9 +24,40 @@ class FrontController
         $tournament = Tournament::find(1);
 
         $is_reservable = true;
+
         if ($tournament->last_entry_number > 29) {
             $is_reservable = false;
         }
+
+        $tournament_details = [
+            [
+                'title' => '日時',
+                'detail' => '2022年9月24日(土)',
+            ],
+            [
+                'title' => '料金',
+                'detail' => '参加費1,500円 + 渡船代',
+            ],
+            [
+                'title' => '対象魚',
+                'detail' => '黒鯛・真鯛・青物・アコウ',
+            ],
+            [
+                'title' => '景品',
+                'detail' => '参加賞：QUOカード500円分
+                各部門：優勝5,000円/2位2,000円
+                じゃんけん大会：おむやさんのお食事券5名',
+            ],
+            [
+                'title' => 'ルール',
+                'detail' => '1人2魚種までエントリー可能。
+                当日のポイント選びはくじ引きで決定します。'
+            ],
+            [
+                'title' => '協賛',
+                'detail' => 'たい公望/おむや/釣具のポイント/個人スポンサー：匿名様',
+            ]
+        ];
 
         return view('front::index', compact(
             'title',
@@ -34,7 +65,8 @@ class FrontController
             'method',
             'fishing_styles',
             'is_reservable',
-            'tournament'
+            'tournament',
+            'tournament_details'
         ));
     }
 
