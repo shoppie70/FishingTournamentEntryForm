@@ -12,6 +12,12 @@ class PasswordResetTest extends TestCase
 {
     use RefreshDatabase;
 
+    public function setUp(): void
+    {
+        // 祖先クラスの setUp() を忘れずにコールする。
+        parent::setUp();
+    }
+
     public function testResetPasswordLinkScreenCanBeRendered(): void
     {
         $response = $this->get('/forgot-password');

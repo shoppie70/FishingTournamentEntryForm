@@ -11,6 +11,12 @@ class AuthenticationTest extends TestCase
 {
     use RefreshDatabase;
 
+    public function setUp(): void
+    {
+        // 祖先クラスの setUp() を忘れずにコールする。
+        parent::setUp();
+    }
+
     public function testLoginScreenCanBeRendered(): void
     {
         $response = $this->get('/login');

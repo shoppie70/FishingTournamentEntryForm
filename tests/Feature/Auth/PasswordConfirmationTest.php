@@ -10,6 +10,12 @@ class PasswordConfirmationTest extends TestCase
 {
     use RefreshDatabase;
 
+    public function setUp(): void
+    {
+        // 祖先クラスの setUp() を忘れずにコールする。
+        parent::setUp();
+    }
+
     public function testConfirmPasswordScreenCanBeRendered(): void
     {
         $user = User::factory()->create();
