@@ -68,7 +68,7 @@
     <section class="bg-white">
         <figure class="relative">
             <img style="filter:opacity(0.5) blur(2px);" src="{{ asset('assets/front/images/shugo.jpg') }}" alt="集合写真">
-            <figcaption class="mt-2 absolute w-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <figcaption class="mt-2 absolute w-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
                 <img src="{{ asset('assets/front/images/title_bl.png') }}" alt="前田杯 秋の磯釣り大会"
                      class="max-w-screen object-contain logo mx-auto px-8">
             </figcaption>
