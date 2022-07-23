@@ -33,13 +33,13 @@ class Entry extends Model
         return $this->belongsTo(Tournament::class, 'tournament_id');
     }
 
-    public function selected_fish_1(): \Illuminate\Database\Eloquent\Relations\HasOne
+    public function selected_fish_1()
     {
-        return $this->hasOne(Fish::class, 'selected_fish_id_1');
+        return $this->belongsTo(Fish::class, 'selected_fish_id_1');
     }
 
-    public function selected_fish_2(): \Illuminate\Database\Eloquent\Relations\HasOne
+    public function selected_fish_2()
     {
-        return $this->hasOne(Fish::class, 'selected_fish_id_2');
+        return $this->belongsTo(Fish::class, 'selected_fish_id_2');
     }
 }

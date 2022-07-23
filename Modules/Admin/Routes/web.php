@@ -14,6 +14,7 @@
 use Illuminate\Support\Facades\Route;
 use Modules\Admin\Http\Controllers\AdminController;
 use Modules\Admin\Http\Controllers\Auth\AuthenticatedSessionController;
+use Modules\Admin\Http\Controllers\DashboardController;
 use Modules\Admin\Http\Controllers\ReservationController;
 use Modules\Admin\Http\Controllers\SystemController;
 
@@ -23,7 +24,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], static function (): void {
     Route::get('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 
     Route::middleware('auth:admins')->group(static function (): void {
-        Route::get('/', [ReservationController::class, 'calendar'])->name('index');
+        Route::get('/', [DashboardController::class, 'index'])->name('index');
 
         // admin.profile.
         Route::group(['prefix' => 'accounts', 'as' => 'accounts.'], static function (): void {

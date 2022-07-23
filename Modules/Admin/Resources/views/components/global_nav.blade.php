@@ -7,6 +7,6 @@
         >
             {{ $title ?? 'DashBoard' }}
         </a>
-        @include('admin::components.widgets.account_menu')
+{{--        @include('admin::components.widgets.account_menu')--}}
     </div>
 </nav>
