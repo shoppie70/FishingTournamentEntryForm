@@ -1,6 +1,10 @@
-## This is where your Laravel app goes
+# 釣り大会用のエントリーフォーム
 
-To get started, **delete this file** and then do one of the following:
+- https://fishing.salvador79.dev
 
-- Clone your project or copy all of the files directly into this `src` directory.
-- Spin up the Docker network by following the instructions on the main [README.md](../README.md), and install a brand new Laravel project by running `docker-compose run --rm composer create-project laravel/laravel .` in your terminal.
+## 概要
+
+岡山県は下津井のフィールドで行われる釣り大会  
+`前田杯`のエントリーフォームです。
+
+`Laravel`でサクッと作ったものなので手の空いた際に改修していければと思っています。
