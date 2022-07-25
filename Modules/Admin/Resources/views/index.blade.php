@@ -16,16 +16,6 @@
                                     {{ $title }}
                                 </h3>
                             </div>
-                            <div
-                                class="relative w-full px-4 max-w-full flex-grow flex-1 text-right"
-                            >
-                                <button
-                                    class="bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                    type="button"
-                                >
-                                    See all
-                                </button>
-                            </div>
                         </div>
                     </div>
                     <div class="block w-full overflow-x-auto">
@@ -38,7 +28,7 @@
                                 <th
                                     class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
                                 >
-                                    エントリーナンバー
+                                    ID
                                 </th>
                                 <th
                                     class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"

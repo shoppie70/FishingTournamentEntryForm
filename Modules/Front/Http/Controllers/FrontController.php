@@ -25,7 +25,7 @@ class FrontController
 
         $is_reservable = true;
 
-        if ($tournament->last_entry_number > 29) {
+        if ($tournament->last_entry_number > $tournament->capacity) {
             $is_reservable = false;
         }
 
@@ -90,7 +90,7 @@ class FrontController
             DB::rollback();
             report($exception);
 
-            return redirect()->back()->withErrors($exception->getMessage() ?: '正常に予約できませんでした。再度、お試しください。');
+            return redirect()->back()->withErrors($exception->getMessage() ?: '正常に予約できませんでした。主催者へ連絡ください。');
         }
 
         $title = 'ご応募ありがとうございました。';
