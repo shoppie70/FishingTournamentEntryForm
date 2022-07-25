@@ -55,6 +55,11 @@
                                 >
                                     電話番号
                                 </th>
+                                <th
+                                    class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+                                >
+                                    応募日時
+                                </th>
                             </tr>
                             </thead>
                             <tbody>
@@ -90,6 +95,11 @@
                                         class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
                                     >
                                         {{ $entry->tel ?? '' }}
+                                    </td>
+                                    <td
+                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+                                    >
+                                        {{ $entry->created_at ? date('Y年n月j日 H時i分', strtotime($entry->created_at)) : '' }}
                                     </td>
                                 </tr>
                             @endforeach
