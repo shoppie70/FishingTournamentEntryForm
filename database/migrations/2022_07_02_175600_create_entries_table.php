@@ -41,6 +41,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('tel');
             $table->boolean('is_join_fellowship');
+            $table->boolean('is_hidden')->default(0);
             $table->timestamps();
         });
     }

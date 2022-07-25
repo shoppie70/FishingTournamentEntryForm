@@ -17,7 +17,7 @@ class DashboardController extends Controller
     {
         $title = '応募者一覧';
 
-        $entries = Entry::all();
+        $entries = Entry::query()->where('is_hidden', 0)->get();
 
         return view('admin::index', compact(
             'title',

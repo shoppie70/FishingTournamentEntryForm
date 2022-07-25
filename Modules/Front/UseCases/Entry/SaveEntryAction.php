@@ -8,6 +8,10 @@ class SaveEntryAction
 {
     public function __invoke(array $request)
     {
+        if( Entry::query()->where('tournament_id', $request['tournament_id'])->where('name', $request['name'])->exists() ) {
+            throw new \RuntimeException('既にエントリー済みです。');
+        }
+        
         return Entry::create([
             'tournament_id' => $request['tournament_id'],
             'selected_fish_id_1' => $request['fishing_style'][0],
