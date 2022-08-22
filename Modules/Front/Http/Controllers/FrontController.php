@@ -25,7 +25,7 @@ class FrontController
 
         $is_reservable = true;
 
-        if ($tournament->last_entry_number > $tournament->capacity) {
+        if ($tournament->last_entry_number >= $tournament->capacity) {
             $is_reservable = false;
         }
 
