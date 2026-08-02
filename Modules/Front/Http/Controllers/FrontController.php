@@ -5,7 +5,7 @@ namespace Modules\Front\Http\Controllers;
 use App\Models\Fish;
 use App\Models\Tournament;
 use Exception;
-use http\Exception\RuntimeException;
+use RuntimeException;
 use Illuminate\Support\Facades\DB;
 use Modules\Front\Http\Requests\EntryRequest;
 use Modules\Front\UseCases\Entry\SaveEntryAction;
@@ -25,7 +25,7 @@ class FrontController
 
         $is_reservable = true;
 
-        if ($tournament->last_entry_number >= $tournament->capacity) {
+        if (! $tournament || $tournament->last_entry_number >= $tournament->capacity) {
             $is_reservable = false;
         }
 
