@@ -109,8 +109,7 @@
                     {{ $title }}
                 </h2>
                 @include('front::components.form.error')
-                <form name="entry_form" action="{{ $endpoint }}" method="{{ $method }}">
-                    @csrf
+                <form name="entry_form" action="" method="POST">
                     <input type="hidden" name="tournament_id" value="1">
                     <div class="mb-4">
                         <label class="block font-medium text-sm text-gray-700 mb-2" for="">
@@ -141,6 +140,7 @@
                             'name' => 'name',
                             'placeholder' => '',
                             'required' => true,
+                            'disabled' => true,
                         ])
                     </div>
                     <div class="mb-4">
@@ -148,6 +148,7 @@
                             'title' => '電話番号',
                             'name' => 'tel',
                             'required' => true,
+                            'disabled' => true,
                         ])
                     </div>
                     <div class="mb-4">
@@ -156,14 +157,15 @@
                             'name' => 'email',
                             'placeholder' => '',
                             'required' => true,
+                            'disabled' => true,
                         ])
                     </div>
                     <div class="mb-4">
                         <label class="block font-bold text-sm text-gray-700" for="fellowship">
                             大会終了後の親睦会への参加
                         </label>
-                        <select name="fellowship" id="fellowship"
-                                class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full">
+                        <select name="fellowship" id="fellowship" disabled
+                                class="bg-gray-100 rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full cursor-not-allowed">
                             <option value="1">
                                 参加する
                             </option>
@@ -192,9 +194,9 @@
                                 ※ 上記以外の目的で個人情報を使うことはございません。
                             </p>
                         </div>
-                        <button type="{{ $is_reservable ? 'submit' : 'button' }}" onclick="checkFishingStyleChecked()"
-                                class="w-8/12 block cursor-pointer mx-auto rounded-3xl py-2 px-4 bg-cyan-600 font-bold text-white">
-                            応募する
+                        <button type="button" disabled
+                                class="w-8/12 block cursor-not-allowed opacity-60 mx-auto rounded-3xl py-2 px-4 bg-gray-400 font-bold text-white">
+                            受付終了
                         </button>
                     </div>
                 </form>
