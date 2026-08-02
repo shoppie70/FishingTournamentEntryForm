@@ -118,7 +118,7 @@
                         <ul class="flex flex-wrap">
                             @foreach($fishing_styles as $i => $fishing_style)
                                 <li class="w-1/2 relative">
-                                    <label for="fish{{ $fishing_style->id }}" class="fish-image"
+                                    <label for="fish{{ $fishing_style->id }}" class="fish-image cursor-pointer"
                                            style="background-image: url('{{ asset('assets/front/images/' . $fishing_style->name . '.png') }}')">
                                     <span id="image--fish{{ $fishing_style->id }}" class="entry-cover">
                                         <span class="entry-cover__status">

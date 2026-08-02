@@ -28,6 +28,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css">
     <link rel="stylesheet" href="./public/assets/front/css/app.css">
+    <script>
+        const validateCheckedQuantity = (object) => {
+            if (!object.checked) return;
+            const check_max = 2;
+            let cnt = 0;
+            let object_name = object.name;
+            let elements = document.forms[0].elements[object_name];
+            if (!elements) return;
+            let element_length = elements.length;
+            for (let i = 0; i < element_length; i++) {
+                if (elements[i].checked) {
+                    cnt++;
+                    if (cnt > check_max) {
+                        object.checked = false;
+                        break;
+                    }
+                }
+            }
+        };
+
+        const checkbox_init = () => {
+            const checkboxes = document.getElementsByClassName('entry-checkbox');
+            for (let i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].checked = false;
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            [1, 2, 3, 4].forEach(id => {
+                const fishInput = document.getElementById('fish' + id);
+                const fishImage = document.getElementById('image--fish' + id);
+                if (fishInput && fishImage) {
+                    fishInput.addEventListener('click', function () {
+                        fishImage.style.zIndex = fishInput.checked ? 2 : -1;
+                    });
+                }
+            });
+            checkbox_init();
+        });
+    </script>
 </head>
 <body class="bg-cyan-100 min-h-screen w-full mx-auto" style="max-width: 540px">
     <main class="">
@@ -101,32 +141,32 @@
                         <input type="hidden" name="tournament_id" value="1">
                         <div class="mb-4">
                             <label class="block font-medium text-sm text-gray-700 mb-2">
-                                <span class="font-bold">参加魚種</span> ※受付は終了しました
+                                <span class="font-bold">参加魚種</span> ※2つまで選択可能です！
                             </label>
-                            <ul class="flex flex-wrap opacity-60">
+                            <ul class="flex flex-wrap">
                                 <li class="w-1/2 relative">
-                                    <label class="fish-image cursor-not-allowed" style="background-image: url('./public/assets/front/images/真鯛.png')">
-                                        <span class="entry-cover"><span class="entry-cover__status">受付終了</span></span>
+                                    <label for="fish1" class="fish-image cursor-pointer" style="background-image: url('./public/assets/front/images/真鯛.png')">
+                                        <span id="image--fish1" class="entry-cover"><span class="entry-cover__status">エントリー済み</span></span>
                                     </label>
-                                    <input class="entry-checkbox hidden" type="checkbox" disabled>
+                                    <input id="fish1" class="entry-checkbox hidden" type="checkbox" onclick="validateCheckedQuantity(this)" name="fishing_style[]" value="1">
                                 </li>
                                 <li class="w-1/2 relative">
-                                    <label class="fish-image cursor-not-allowed" style="background-image: url('./public/assets/front/images/黒鯛.png')">
-                                        <span class="entry-cover"><span class="entry-cover__status">受付終了</span></span>
+                                    <label for="fish2" class="fish-image cursor-pointer" style="background-image: url('./public/assets/front/images/黒鯛.png')">
+                                        <span id="image--fish2" class="entry-cover"><span class="entry-cover__status">エントリー済み</span></span>
                                     </label>
-                                    <input class="entry-checkbox hidden" type="checkbox" disabled>
+                                    <input id="fish2" class="entry-checkbox hidden" type="checkbox" onclick="validateCheckedQuantity(this)" name="fishing_style[]" value="2">
                                 </li>
                                 <li class="w-1/2 relative">
-                                    <label class="fish-image cursor-not-allowed" style="background-image: url('./public/assets/front/images/青物.png')">
-                                        <span class="entry-cover"><span class="entry-cover__status">受付終了</span></span>
+                                    <label for="fish3" class="fish-image cursor-pointer" style="background-image: url('./public/assets/front/images/青物.png')">
+                                        <span id="image--fish3" class="entry-cover"><span class="entry-cover__status">エントリー済み</span></span>
                                     </label>
-                                    <input class="entry-checkbox hidden" type="checkbox" disabled>
+                                    <input id="fish3" class="entry-checkbox hidden" type="checkbox" onclick="validateCheckedQuantity(this)" name="fishing_style[]" value="3">
                                 </li>
                                 <li class="w-1/2 relative">
-                                    <label class="fish-image cursor-not-allowed" style="background-image: url('./public/assets/front/images/アコウ.png')">
-                                        <span class="entry-cover"><span class="entry-cover__status">受付終了</span></span>
+                                    <label for="fish4" class="fish-image cursor-pointer" style="background-image: url('./public/assets/front/images/アコウ.png')">
+                                        <span id="image--fish4" class="entry-cover"><span class="entry-cover__status">エントリー済み</span></span>
                                     </label>
-                                    <input class="entry-checkbox hidden" type="checkbox" disabled>
+                                    <input id="fish4" class="entry-checkbox hidden" type="checkbox" onclick="validateCheckedQuantity(this)" name="fishing_style[]" value="4">
                                 </li>
                             </ul>
                         </div>
