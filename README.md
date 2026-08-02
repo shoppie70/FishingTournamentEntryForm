@@ -81,3 +81,13 @@ cp .env.example .env
 
 - `Modules/Front`: 一般参加者向けエントリーフォームおよびビュー
 - `Modules/Admin`: 大会管理者向け管理画面
+
+---
+
+## 🏛 静的アーカイブ（ポートフォリオ掲載・履歴用）
+
+大会終了に伴い、応募ページの画面デザインをそのまま保存した静的HTMLアーカイブページを用意しています。PHP/Laravel環境がなくても直接ブラウザや GitHub Pages 等で閲覧可能です。
+
+- **ルート静的ページ**: `index.html` (ローカルブラウザ直接閲覧用)
+- **Public静的ページ**: `public/index.html` (Webサーバー/GitHub Pagesルート配信用)
+
