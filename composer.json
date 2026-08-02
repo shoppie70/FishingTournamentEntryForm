@@ -5,26 +5,25 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
-        "php": "^8.0.2",
-        "barryvdh/laravel-dompdf": "^1.0",
-        "bensampo/laravel-enum": "^5.3",
-        "guzzlehttp/guzzle": "^7.2",
-        "laravel/framework": "^9.2",
-        "laravel/sanctum": "^2.14.1",
-        "laravel/tinker": "^2.7",
-        "nwidart/laravel-modules": "^9.0"
+        "php": "^8.2",
+        "barryvdh/laravel-dompdf": "^3.0",
+        "bensampo/laravel-enum": "^6.11",
+        "guzzlehttp/guzzle": "^7.8",
+        "laravel/framework": "^12.0",
+        "laravel/sanctum": "^4.0",
+        "laravel/tinker": "^2.10",
+        "nwidart/laravel-modules": "^12.0"
     },
     "require-dev": {
         "bamarni/composer-bin-plugin": "^1.5",
-        "barryvdh/laravel-debugbar": "^3.6",
-        "beyondcode/laravel-query-detector": "^1.6",
-        "fakerphp/faker": "^1.9.1",
-        "laravel/breeze": "^1.9",
-        "laravel/pint": "^0.2.2",
-        "laravel/sail": "^1.0.1",
-        "mockery/mockery": "^1.4.4",
-        "nunomaduro/collision": "^6.1",
-        "spatie/laravel-ignition": "^1.0"
+        "barryvdh/laravel-debugbar": "^3.14",
+        "fakerphp/faker": "^1.23",
+        "laravel/breeze": "^2.3",
+        "laravel/pint": "^1.18",
+        "laravel/sail": "^1.30",
+        "mockery/mockery": "^1.6",
+        "nunomaduro/collision": "^8.5",
+        "spatie/laravel-ignition": "^2.9"
     },
     "autoload": {
         "psr-4": {
@@ -64,7 +63,8 @@
         "preferred-install": "dist",
         "sort-packages": true,
         "allow-plugins": {
-            "bamarni/composer-bin-plugin": true
+            "bamarni/composer-bin-plugin": true,
+            "wikimedia/composer-merge-plugin": true
         }
     },
     "minimum-stability": "dev",
